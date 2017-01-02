@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<!-- an HTTP Session-scoped bean exposed as a proxy -->
+	
+	<!-- 配置由spring创建的java类的对象 spring帮你new -->
+<bean id="p" class="com.yc.bean.Person">
+	<!--  基本类型用 value-->
+	<property name="name" value="wangwu"></property>
+	<property name="age" value="21"></property>
+	<property name="address" ref="addr" />
+	<!-- 托管用 ref  -->
+</bean>
+ <bean id="sboi" class="com.yc.biz.impl.StudentBizOracleImpl"></bean>
+
+	<bean id="addr" class="com.yc.bean.Address">
+	<property name="province" value="湖南省"></property>
+	<property name="city" value="衡阳市"></property>
+	<property name="district" value="珠晖区"></property>
+	</bean>
+	<bean id="addr2" class="com.yc.bean.Address">
+	<property name="province" value="湖南省"></property>
+	<property name="city" value="湘潭市"></property>
+	<property name="district" value="望城区"></property>
+	</bean>
+	
+</beans>  
+
+
+
